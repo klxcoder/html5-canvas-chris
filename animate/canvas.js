@@ -41,5 +41,6 @@ c.stroke();
 
 function animate() {
   requestAnimationFrame(animate);
+  console.log('hello');
 }
 animate();
