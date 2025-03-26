@@ -53,7 +53,11 @@ const COLORS = [
 window.addEventListener('mousemove', (event) => {
   mouse.x = event.x;
   mouse.y = event.y;
-  console.log(mouse);
+})
+
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 })
 
 class Circle {
