@@ -58,6 +58,7 @@ window.addEventListener('mousemove', (event) => {
 window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+  init()
 })
 
 class Circle {
@@ -99,7 +100,13 @@ class Circle {
   }
 }
 
-const circles = Array(800).fill(true).map(() => new Circle())
+let circles = []
+
+function init() {
+  circles = Array(800).fill(true).map(() => new Circle())
+}
+
+init()
 
 function animate() {
   requestAnimationFrame(animate);
