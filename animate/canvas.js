@@ -34,6 +34,31 @@ const c = canvas.getContext('2d')
 //   c.stroke();
 // }
 
+class Circle {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+  draw() {
+    c.beginPath();
+    c.arc(this.x, this.y, radius, 0, Math.PI * 2, false)
+    c.strokeStyle = 'blue'
+    c.stroke();
+  }
+  update() {
+    if (this.x + radius > window.innerWidth || this.x - radius < 0) {
+      dx = -dx;
+    }
+    if (this.y + radius > window.innerHeight || this.y - radius < 0) {
+      dy = -dy;
+    }
+    this.x += dx;
+    this.y += dy;
+  }
+}
+
+const circle = new Circle(200, 200);
+
 let x = Math.random() * window.innerWidth;
 let y = Math.random() * window.innerHeight;
 let dx = (Math.random() - 0.5) * 8;
@@ -44,18 +69,7 @@ function animate() {
   requestAnimationFrame(animate);
   c.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
-  c.beginPath();
-  c.arc(x, y, radius, 0, Math.PI * 2, false)
-  c.strokeStyle = 'blue'
-  c.stroke();
-
-  if (x + radius > window.innerWidth || x - radius < 0) {
-    dx = -dx;
-  }
-  if (y + radius > window.innerHeight || y - radius < 0) {
-    dy = -dy;
-  }
-  x += dx;
-  y += dy;
+  circle.draw();
+  circle.update();
 }
 animate();
