@@ -47,7 +47,7 @@ function animate() {
   c.strokeStyle = 'blue'
   c.stroke();
 
-  if (x > window.innerWidth) {
+  if (x + radius > window.innerWidth) {
     dx = -1;
   }
 
