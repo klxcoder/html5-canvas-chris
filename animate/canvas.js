@@ -35,9 +35,9 @@ const c = canvas.getContext('2d')
 // }
 
 class Circle {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
+  constructor() {
+    this.x = Math.random() * window.innerWidth;
+    this.y = Math.random() * window.innerHeight;
     this.dx = (Math.random() - 0.5) * 8;
     this.dy = (Math.random() - 0.5) * 8;
     this.radius = 30;
@@ -60,7 +60,7 @@ class Circle {
   }
 }
 
-const circle = new Circle(200, 200);
+const circle = new Circle();
 
 function animate() {
   requestAnimationFrame(animate);
