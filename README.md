@@ -6,3 +6,4 @@
   - drawing
   - animate
   - interact
+  - gravity
