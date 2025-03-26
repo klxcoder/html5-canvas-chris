@@ -38,30 +38,29 @@ class Circle {
   constructor(x, y) {
     this.x = x;
     this.y = y;
+    this.dx = (Math.random() - 0.5) * 8;
+    this.dy = (Math.random() - 0.5) * 8;
+    this.radius = 30;
   }
   draw() {
     c.beginPath();
-    c.arc(this.x, this.y, radius, 0, Math.PI * 2, false)
+    c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
     c.strokeStyle = 'blue'
     c.stroke();
   }
   update() {
-    if (this.x + radius > window.innerWidth || this.x - radius < 0) {
-      dx = -dx;
+    if (this.x + this.radius > window.innerWidth || this.x - this.radius < 0) {
+      this.dx = -this.dx;
     }
-    if (this.y + radius > window.innerHeight || this.y - radius < 0) {
-      dy = -dy;
+    if (this.y + this.radius > window.innerHeight || this.y - this.radius < 0) {
+      this.dy = -this.dy;
     }
-    this.x += dx;
-    this.y += dy;
+    this.x += this.dx;
+    this.y += this.dy;
   }
 }
 
 const circle = new Circle(200, 200);
-
-let dx = (Math.random() - 0.5) * 8;
-let dy = (Math.random() - 0.5) * 8;
-let radius = 30;
 
 function animate() {
   requestAnimationFrame(animate);
