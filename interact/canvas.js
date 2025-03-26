@@ -40,6 +40,7 @@ const mouse = {
 }
 
 const MAX_RADIUS = 40
+const MIN_RADIUS = 2
 
 window.addEventListener('mousemove', (event) => {
   mouse.x = event.x;
@@ -76,7 +77,7 @@ class Circle {
       if (this.radius < MAX_RADIUS) {
         this.radius += 1;
       }
-    } else if (this.radius > 2) {
+    } else if (this.radius > MIN_RADIUS) {
       this.radius -= 1;
     }
 
