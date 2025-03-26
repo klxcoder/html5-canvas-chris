@@ -42,6 +42,14 @@ const mouse = {
 const MAX_RADIUS = 40
 const MIN_RADIUS = 2
 
+const COLORS = [
+  "#ffaa33",
+  "#99ffaa",
+  "#00ff00",
+  "#4411aa",
+  "#ff1100",
+]
+
 window.addEventListener('mousemove', (event) => {
   mouse.x = event.x;
   mouse.y = event.y;
