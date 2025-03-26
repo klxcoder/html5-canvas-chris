@@ -63,11 +63,12 @@ class Circle {
     this.y = Math.random() * (window.innerHeight - 2 * this.radius) + this.radius;
     this.dx = (Math.random() - 0.5) * 8;
     this.dy = (Math.random() - 0.5) * 8;
+    this.color = COLORS[Math.floor(Math.random() * COLORS.length)]
   }
   draw() {
     c.beginPath();
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
-    c.fillStyle = COLORS[Math.floor(Math.random() * COLORS.length)]
+    c.fillStyle = this.color
     c.fill();
   }
   update() {
