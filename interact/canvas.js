@@ -34,8 +34,8 @@ const c = canvas.getContext('2d')
 //   c.stroke();
 // }
 
-window.addEventListener('mousemove', () => {
-  console.log('move mouse')
+window.addEventListener('mousemove', (event) => {
+  console.log(event)
 })
 
 class Circle {
