@@ -34,9 +34,9 @@ const c = canvas.getContext('2d')
 //   c.stroke();
 // }
 
-let x = 200;
+let x = Math.random() * window.innerWidth;
 let dx = 1;
-let y = 200;
+let y = Math.random() * window.innerHeight;
 let dy = 1;
 let radius = 30;
 
