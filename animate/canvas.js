@@ -57,6 +57,7 @@ class Circle {
     }
     this.x += this.dx;
     this.y += this.dy;
+    this.draw();
   }
 }
 
@@ -67,7 +68,6 @@ function animate() {
   c.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
   circles.forEach(circle => {
-    circle.draw();
     circle.update();
   })
 
