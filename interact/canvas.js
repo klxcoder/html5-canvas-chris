@@ -39,6 +39,8 @@ const mouse = {
   y: undefined,
 }
 
+const MAX_RADIUS = 40
+
 window.addEventListener('mousemove', (event) => {
   mouse.x = event.x;
   mouse.y = event.y;
@@ -71,7 +73,7 @@ class Circle {
 
     // Interactivity
     if (Math.abs(mouse.x - this.x) < 50 && Math.abs(mouse.y - this.y) < 50) {
-      if (this.radius < 40) {
+      if (this.radius < MAX_RADIUS) {
         this.radius += 1;
       }
     } else if (this.radius > 2) {
