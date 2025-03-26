@@ -36,6 +36,8 @@ const c = canvas.getContext('2d')
 
 let x = 200;
 let dx = 1;
+let y = 200;
+let dy = 1;
 let radius = 30;
 
 function animate() {
@@ -43,14 +45,17 @@ function animate() {
   c.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
   c.beginPath();
-  c.arc(x, 200, radius, 0, Math.PI * 2, false)
+  c.arc(x, y, radius, 0, Math.PI * 2, false)
   c.strokeStyle = 'blue'
   c.stroke();
 
   if (x + radius > window.innerWidth || x - radius < 0) {
     dx = -dx;
   }
-
+  if (y + radius > window.innerHeight || y - radius < 0) {
+    dy = -dy;
+  }
   x += dx;
+  y += dy;
 }
 animate();
