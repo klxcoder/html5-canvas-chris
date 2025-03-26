@@ -12,4 +12,5 @@ c.fillRect(300, 300, 100, 100)
 c.beginPath();
 c.moveTo(50, 300);
 c.lineTo(300, 100);
+c.lineTo(400, 300);
 c.stroke();
