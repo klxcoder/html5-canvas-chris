@@ -5,3 +5,4 @@
   - canvas-resize
   - drawing
   - animate
+  - interact
