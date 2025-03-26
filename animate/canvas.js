@@ -35,9 +35,9 @@ const c = canvas.getContext('2d')
 // }
 
 let x = Math.random() * window.innerWidth;
-let dx = 1;
 let y = Math.random() * window.innerHeight;
-let dy = 1;
+let dx = 4;
+let dy = 4;
 let radius = 30;
 
 function animate() {
