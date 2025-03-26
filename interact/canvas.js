@@ -43,11 +43,11 @@ const MAX_RADIUS = 40
 const MIN_RADIUS = 2
 
 const COLORS = [
-  "#ffaa33",
-  "#99ffaa",
-  "#00ff00",
-  "#4411aa",
-  "#ff1100",
+  "#012030",
+  "#13678A",
+  "#45C4B0",
+  "#9AEBA3",
+  "#DAFDBA",
 ]
 
 window.addEventListener('mousemove', (event) => {
