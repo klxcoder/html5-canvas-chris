@@ -34,11 +34,15 @@ const c = canvas.getContext('2d')
 //   c.stroke();
 // }
 
+let x = 200;
+
 function animate() {
   requestAnimationFrame(animate);
   c.beginPath();
-  c.arc(200, 200, 30, 0, Math.PI * 2, false)
+  c.arc(x, 200, 30, 0, Math.PI * 2, false)
   c.strokeStyle = 'blue'
   c.stroke();
+
+  x += 1;
 }
 animate();
