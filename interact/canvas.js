@@ -58,7 +58,8 @@ window.addEventListener('mousemove', (event) => {
 
 class Circle {
   constructor() {
-    this.radius = 30;
+    this.radius = Math.random() * 3 + 1;
+    this.minRadius = this.radius;
     this.x = Math.random() * (window.innerWidth - 2 * this.radius) + this.radius;
     this.y = Math.random() * (window.innerHeight - 2 * this.radius) + this.radius;
     this.dx = (Math.random() - 0.5) * 8;
@@ -86,7 +87,7 @@ class Circle {
       if (this.radius < MAX_RADIUS) {
         this.radius += 1;
       }
-    } else if (this.radius > MIN_RADIUS) {
+    } else if (this.radius > this.minRadius) {
       this.radius -= 1;
     }
 
@@ -94,7 +95,7 @@ class Circle {
   }
 }
 
-const circles = Array(100).fill(true).map(() => new Circle())
+const circles = Array(800).fill(true).map(() => new Circle())
 
 function animate() {
   requestAnimationFrame(animate);
