@@ -70,7 +70,7 @@ class Circle {
     this.y += this.dy;
 
     // Interactivity
-    if (Math.abs(mouse.x - this.x) < 50) {
+    if (Math.abs(mouse.x - this.x) < 50 && Math.abs(mouse.y - this.y) < 50) {
       this.radius += 1;
     }
 
