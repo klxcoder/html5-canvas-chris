@@ -35,6 +35,7 @@ const c = canvas.getContext('2d')
 // }
 
 let x = 200;
+let dx = 1;
 
 function animate() {
   requestAnimationFrame(animate);
@@ -45,6 +46,6 @@ function animate() {
   c.strokeStyle = 'blue'
   c.stroke();
 
-  x += 1;
+  x += dx;
 }
 animate();
