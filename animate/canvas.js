@@ -36,13 +36,14 @@ const c = canvas.getContext('2d')
 
 let x = 200;
 let dx = 1;
+let radius = 30;
 
 function animate() {
   requestAnimationFrame(animate);
   c.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
   c.beginPath();
-  c.arc(x, 200, 30, 0, Math.PI * 2, false)
+  c.arc(x, 200, radius, 0, Math.PI * 2, false)
   c.strokeStyle = 'blue'
   c.stroke();
 
