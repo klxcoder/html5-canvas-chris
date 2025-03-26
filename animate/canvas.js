@@ -60,13 +60,16 @@ class Circle {
   }
 }
 
-const circle = new Circle();
+const circles = Array(100).fill(true).map(() => new Circle())
 
 function animate() {
   requestAnimationFrame(animate);
   c.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
-  circle.draw();
-  circle.update();
+  circles.forEach(circle => {
+    circle.draw();
+    circle.update();
+  })
+
 }
 animate();
