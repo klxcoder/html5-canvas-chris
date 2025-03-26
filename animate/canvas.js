@@ -36,11 +36,11 @@ const c = canvas.getContext('2d')
 
 class Circle {
   constructor() {
-    this.x = Math.random() * window.innerWidth;
-    this.y = Math.random() * window.innerHeight;
+    this.radius = 30;
+    this.x = Math.random() * (window.innerWidth - 2 * this.radius) + this.radius;
+    this.y = Math.random() * (window.innerHeight - 2 * this.radius) + this.radius;
     this.dx = (Math.random() - 0.5) * 8;
     this.dy = (Math.random() - 0.5) * 8;
-    this.radius = 30;
   }
   draw() {
     c.beginPath();
