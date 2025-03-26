@@ -46,6 +46,10 @@ function animate() {
   c.strokeStyle = 'blue'
   c.stroke();
 
+  if (x > window.innerWidth) {
+    dx = -1;
+  }
+
   x += dx;
 }
 animate();
