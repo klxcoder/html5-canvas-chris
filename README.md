@@ -4,3 +4,4 @@
 # Order
   - canvas-resize
   - drawing
+  - animate
