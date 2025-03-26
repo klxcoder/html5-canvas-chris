@@ -38,6 +38,8 @@ let x = 200;
 
 function animate() {
   requestAnimationFrame(animate);
+  c.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
   c.beginPath();
   c.arc(x, 200, 30, 0, Math.PI * 2, false)
   c.strokeStyle = 'blue'
