@@ -68,6 +68,12 @@ class Circle {
     }
     this.x += this.dx;
     this.y += this.dy;
+
+    // Interactivity
+    if (mouse.x - this.x < 50) {
+      this.radius += 1;
+    }
+
     this.draw();
   }
 }
