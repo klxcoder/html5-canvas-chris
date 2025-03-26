@@ -34,8 +34,15 @@ const c = canvas.getContext('2d')
 //   c.stroke();
 // }
 
+const mouse = {
+  x: undefined,
+  y: undefined,
+}
+
 window.addEventListener('mousemove', (event) => {
-  console.log(event)
+  mouse.x = event.x;
+  mouse.y = event.y;
+  console.log(mouse);
 })
 
 class Circle {
