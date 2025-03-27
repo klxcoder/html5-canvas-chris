@@ -33,7 +33,6 @@ window.addEventListener('resize', () => {
 class Circle {
   constructor() {
     this.radius = Math.random() * 10 + 5;
-    this.minRadius = this.radius;
     this.x = Math.random() * (window.innerWidth - 2 * this.radius) + this.radius;
     this.y = Math.random() * (window.innerHeight - 2 * this.radius) + this.radius;
     this.dx = (Math.random() - 0.5) * 8;
@@ -55,15 +54,6 @@ class Circle {
     }
     this.x += this.dx;
     this.y += this.dy;
-
-    // Interactivity
-    if (Math.abs(mouse.x - this.x) < 50 && Math.abs(mouse.y - this.y) < 50) {
-      if (this.radius < MAX_RADIUS) {
-        this.radius += 1;
-      }
-    } else if (this.radius > this.minRadius) {
-      this.radius -= 1;
-    }
 
     this.draw();
   }
