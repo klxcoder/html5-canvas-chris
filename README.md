@@ -7,3 +7,4 @@
   - animate
   - interact
   - gravity
+  - collision
