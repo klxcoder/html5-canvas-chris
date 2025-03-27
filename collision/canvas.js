@@ -66,15 +66,11 @@ window.addEventListener('click', () => {
 })
 
 class Circle {
-  constructor() {
-    this.radius = Math.random() * 20 + 1;
-    this.minRadius = this.radius;
-    this.x = Math.random() * (window.innerWidth - 2 * this.radius) + this.radius;
-    this.y = Math.random() * (window.innerHeight - 2 * this.radius) + this.radius;
-    this.dx = Math.random() * 2;
-    this.dy = Math.random() * 8;
-    this.color = COLORS[Math.floor(Math.random() * COLORS.length)]
-    this.friction = 0.95;
+  constructor(x, y, radius, color) {
+    this.x = x;
+    this.y = y;
+    this.radius = radius;
+    this.color = color;
   }
   draw() {
     c.beginPath();
@@ -83,21 +79,6 @@ class Circle {
     c.fill();
   }
   update() {
-    if (this.x + this.radius > window.innerWidth) {
-      this.dx = -Math.abs(this.dx) * this.friction;
-    } else if (this.x - this.radius < 0) {
-      this.dx = Math.abs(this.dx) * this.friction;
-    }
-    if (this.y + this.radius > window.innerHeight) {
-      this.dy = -Math.abs(this.dy) * this.friction;
-    } else if (this.y - this.radius < 0) {
-      this.dy = Math.abs(this.dy) * this.friction;
-    } else {
-      this.dy += 0.1;
-    }
-    this.x += this.dx;
-    this.y += this.dy;
-
     this.draw();
   }
 }
@@ -105,7 +86,7 @@ class Circle {
 let circles = []
 
 function init() {
-  circles = Array(100).fill(true).map(() => new Circle())
+  circle1 = new Circle(300, 300, 100, 'black')
 }
 
 init()
@@ -113,10 +94,7 @@ init()
 function animate() {
   requestAnimationFrame(animate);
   c.clearRect(0, 0, window.innerWidth, window.innerHeight);
-
-  circles.forEach(circle => {
-    circle.update();
-  })
+  circle1.update();
 
 }
 animate();
