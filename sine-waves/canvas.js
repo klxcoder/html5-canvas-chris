@@ -10,21 +10,19 @@ const wave = {
   length: 0.01,
   amplitude: 100,
   frequency: 0.01,
+  color: 196,
 }
 
 gui.add(wave, 'y', 0, window.innerHeight)
 gui.add(wave, 'length', -0.01, 0.01)
 gui.add(wave, 'amplitude', -300, 300)
 gui.add(wave, 'frequency', -0.01, 1)
+gui.add(wave, 'color', 0, 360)
 
 const mouse = {
   x: window.innerWidth / 2,
   y: window.innerHeight / 2,
 }
-
-const COLORS = [
-  "hsl(196, 76%, 30%)",
-]
 
 window.addEventListener('mousemove', (event) => {
   mouse.x = event.x;
@@ -39,7 +37,6 @@ window.addEventListener('resize', () => {
 
 class Line {
   constructor() {
-    this.color = COLORS[Math.floor(Math.random() * COLORS.length)]
     this.increment = wave.frequency
   }
   draw() {
@@ -48,7 +45,7 @@ class Line {
     for (let i = 0; i < window.innerWidth; i++) {
       c.lineTo(i, wave.y + Math.sin(i * wave.length + this.increment) * wave.amplitude)
     }
-    c.strokeStyle = this.color
+    c.strokeStyle = `hsl(${wave.color}, 76%, 30%)`
     c.stroke()
   }
   update() {
