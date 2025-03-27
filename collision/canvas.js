@@ -92,6 +92,12 @@ function init() {
 
 init()
 
+function getDistance(circle1, circle2) {
+  let dx = circle1.x - circle2.x
+  let dy = circle1.y - circle2.y
+  return Math.sqrt(dx * dx + dy * dy)
+}
+
 function animate() {
   requestAnimationFrame(animate);
   c.clearRect(0, 0, window.innerWidth, window.innerHeight);
