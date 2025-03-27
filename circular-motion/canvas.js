@@ -41,9 +41,9 @@ class Circle {
   }
   draw() {
     c.beginPath();
-    const x = this.x + Math.sin(this.radians) * this.distance;
-    console.log(x)
-    c.arc(x, this.y, this.radius, 0, Math.PI * 2, false)
+    const x = this.x + Math.cos(this.radians) * this.distance;
+    const y = this.y + Math.sin(this.radians) * this.distance;
+    c.arc(x, y, this.radius, 0, Math.PI * 2, false)
     c.fillStyle = this.color
     c.fill();
   }
