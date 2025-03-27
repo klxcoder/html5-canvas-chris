@@ -64,7 +64,7 @@ init()
 
 function animate() {
   requestAnimationFrame(animate);
-  c.fillStyle = 'rgba(255, 255, 255, 0.08)'
+  c.fillStyle = 'rgba(255, 255, 255, 0.05)'
   c.fillRect(0, 0, window.innerWidth, window.innerHeight);
   lines.forEach(line => {
     line.update();
