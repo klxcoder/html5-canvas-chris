@@ -33,8 +33,8 @@ window.addEventListener('resize', () => {
 class Circle {
   constructor() {
     this.radius = Math.random() * 10 + 5;
-    this.x = Math.random() * (window.innerWidth - 2 * this.radius) + this.radius;
-    this.y = Math.random() * (window.innerHeight - 2 * this.radius) + this.radius;
+    this.x = 300;
+    this.y = 300;
     this.dx = (Math.random() - 0.5) * 8;
     this.dy = (Math.random() - 0.5) * 8;
     this.color = COLORS[Math.floor(Math.random() * COLORS.length)]
