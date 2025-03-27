@@ -106,6 +106,8 @@ function animate() {
   circle2.y = mouse.y;
   if (getDistance(circle1, circle2) < circle1.radius + circle2.radius) {
     circle1.color = 'red'
+  } else {
+    circle1.color = 'black'
   }
   circle2.update();
 }
