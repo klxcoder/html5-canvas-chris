@@ -63,8 +63,8 @@ init()
 
 function animate() {
   requestAnimationFrame(animate);
-  c.clearRect(0, 0, window.innerWidth, window.innerHeight);
-
+  c.fillStyle = 'rgba(255, 255, 255, 0.08)'
+  c.fillRect(0, 0, window.innerWidth, window.innerHeight);
   circles.forEach(circle => {
     circle.update();
   })
