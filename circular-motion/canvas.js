@@ -51,7 +51,7 @@ class Circle {
 let circles = []
 
 function init() {
-  circles = Array(4).fill(true).map(() => new Circle())
+  circles = Array(1).fill(true).map(() => new Circle())
 }
 
 init()
