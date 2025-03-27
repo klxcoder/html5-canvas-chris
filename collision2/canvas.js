@@ -75,11 +75,25 @@ function init() {
   circles = []
   n = 4;
   while (n--) {
-    const radius = 100;
-    x = getRandomInt(radius, window.innerWidth - radius)
-    y = getRandomInt(radius, window.innerHeight - radius)
-    const circle = new Circle(x, y, radius, 'black')
-    circles.push(circle)
+    m = 100 // prevent infinitive loop
+    while (m--) {
+      const radius = 100;
+      x = getRandomInt(radius, window.innerWidth - radius)
+      y = getRandomInt(radius, window.innerHeight - radius)
+      const circle = new Circle(x, y, radius, 'black')
+      collision = false
+      for (let c of circles) {
+        if (isCollision(c, circle)) {
+          collision = true
+          break
+        }
+      }
+      if (collision) {
+        continue
+      }
+      circles.push(circle)
+      break
+    }
   }
 }
 
