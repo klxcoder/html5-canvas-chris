@@ -78,11 +78,15 @@ function getDistance(circle1, circle2) {
   return Math.sqrt(dx * dx + dy * dy)
 }
 
+function isCollision(circle1, circle2) {
+  return getDistance(circle1, circle2) < circle1.radius + circle2.radius
+}
+
 function animate() {
   requestAnimationFrame(animate);
   c.clearRect(0, 0, window.innerWidth, window.innerHeight);
   circle1.update();
-  if (getDistance(circle1, circle2) < circle1.radius + circle2.radius) {
+  if (isCollision(circle1, circle2)) {
     circle1.color = 'red'
     circle2.color = 'red'
   } else {
