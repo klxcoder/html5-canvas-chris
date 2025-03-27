@@ -72,12 +72,15 @@ function getRandomInt(a, b) {
 let circles = []
 
 function init() {
-  circles = Array(4).fill(true).map(() => {
+  circles = []
+  n = 4;
+  while (n--) {
     const radius = 100;
     x = getRandomInt(radius, window.innerWidth - radius)
     y = getRandomInt(radius, window.innerHeight - radius)
-    return new Circle(x, y, radius, 'black')
-  })
+    const circle = new Circle(x, y, radius, 'black')
+    circles.push(circle)
+  }
 }
 
 init()
