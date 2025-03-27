@@ -21,11 +21,7 @@ const mouse = {
 }
 
 const COLORS = [
-  "#012030",
   "#13678A",
-  "#45C4B0",
-  "#9AEBA3",
-  "#DAFDBA",
 ]
 
 window.addEventListener('mousemove', (event) => {
