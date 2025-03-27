@@ -82,7 +82,7 @@ class Circle {
       this.dx = -this.dx;
     }
     if (this.y + this.radius > window.innerHeight || this.y - this.radius < 0) {
-      this.dy = -this.dy * 0.5;
+      this.dy = -this.dy * 0.9;
     } else {
       this.dy += 0.1;
     }
