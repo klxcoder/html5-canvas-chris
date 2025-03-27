@@ -4,8 +4,8 @@ canvas.height = window.innerHeight;
 const c = canvas.getContext('2d')
 
 const mouse = {
-  x: undefined,
-  y: undefined,
+  x: 0,
+  y: 0,
 }
 
 const MAX_RADIUS = 40
@@ -41,14 +41,16 @@ class Circle {
   }
   draw() {
     c.beginPath();
-    const x = mouse.x + Math.cos(this.radians) * this.distance;
-    const y = mouse.y + Math.sin(this.radians) * this.distance;
+    const x = this.x + Math.cos(this.radians) * this.distance;
+    const y = this.y + Math.sin(this.radians) * this.distance;
     c.arc(x, y, this.radius, 0, Math.PI * 2, false)
     c.fillStyle = this.color
     c.fill();
   }
   update() {
     this.radians += 0.05;
+    this.x += (mouse.x - this.x) * 0.05
+    this.y += (mouse.y - this.y) * 0.05
     this.draw();
   }
 }
