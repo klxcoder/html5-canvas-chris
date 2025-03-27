@@ -5,6 +5,16 @@ const c = canvas.getContext('2d')
 
 const gui = new dat.GUI()
 
+const wave = {
+  y: canvas.height / 2,
+  length: 0.01,
+  amplitude: 100,
+}
+
+gui.add(wave, 'y', 0, window.innerHeight)
+gui.add(wave, 'length', -0.01, 0.01)
+gui.add(wave, 'amplitude', -300, 300)
+
 const mouse = {
   x: window.innerWidth / 2,
   y: window.innerHeight / 2,
@@ -37,7 +47,7 @@ class Line {
     c.beginPath()
     c.moveTo(0, window.innerHeight / 2)
     for (let i = 0; i < window.innerWidth; i++) {
-      c.lineTo(i, window.innerHeight / 2 + Math.sin(i * 0.01) * 100)
+      c.lineTo(i, wave.y + Math.sin(i * wave.length) * wave.amplitude)
     }
     c.strokeStyle = this.color
     c.stroke()
