@@ -44,6 +44,7 @@ class Circle {
       x: (Math.random() - 0.5) * 8,
       y: (Math.random() - 0.5) * 8,
     }
+    this.mass = 1;
   }
   draw() {
     c.beginPath();
@@ -112,16 +113,12 @@ function isCollision(circle1, circle2) {
 function animate() {
   requestAnimationFrame(animate);
   c.clearRect(0, 0, window.innerWidth, window.innerHeight);
-  for (let circle of circles) {
-    circle.color = 'black'
-  }
   for (let i = 0; i < circles.length; i++) {
     const circle1 = circles[i]
     for (let j = i + 1; j < circles.length; j++) {
       const circle2 = circles[j]
       if (isCollision(circle1, circle2)) {
-        circle1.color = 'red'
-        circle2.color = 'red'
+        resolveCollision(circle1, circle2)
       }
     }
     circle1.update();
