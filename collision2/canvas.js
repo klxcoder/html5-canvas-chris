@@ -78,7 +78,6 @@ function init() {
     y = getRandomInt(radius, window.innerHeight - radius)
     return new Circle(x, y, radius, 'black')
   })
-  console.log(circles)
 }
 
 init()
