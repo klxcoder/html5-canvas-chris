@@ -13,11 +13,14 @@ const wave = {
   color: 196,
 }
 
-gui.add(wave, 'y', 0, window.innerHeight)
-gui.add(wave, 'length', -0.01, 0.01)
-gui.add(wave, 'amplitude', -300, 300)
-gui.add(wave, 'frequency', -0.01, 1)
-gui.add(wave, 'color', 0, 360)
+const waveFolder = gui.addFolder('wave')
+waveFolder.add(wave, 'y', 0, window.innerHeight)
+waveFolder.add(wave, 'length', -0.01, 0.01)
+waveFolder.add(wave, 'amplitude', -300, 300)
+waveFolder.add(wave, 'frequency', -0.01, 1)
+
+const colorFolder = gui.addFolder('color')
+colorFolder.add(wave, 'color', 0, 360)
 
 const mouse = {
   x: window.innerWidth / 2,
