@@ -58,8 +58,8 @@ class Circle {
     if (this.y + this.radius > window.innerHeight || this.y - this.radius < 0) {
       this.velocity.y = -this.velocity.y;
     }
-    // this.x += this.velocity.x;
-    // this.y += this.velocity.y;
+    this.x += this.velocity.x;
+    this.y += this.velocity.y;
 
     this.draw();
   }
@@ -73,7 +73,7 @@ let circles = []
 
 function init() {
   circles = []
-  n = 4;
+  n = 10;
   while (n--) {
     m = 100 // prevent infinitive loop
     while (m--) {
