@@ -9,11 +9,13 @@ const wave = {
   y: canvas.height / 2,
   length: 0.01,
   amplitude: 100,
+  frequency: 0.01,
 }
 
 gui.add(wave, 'y', 0, window.innerHeight)
 gui.add(wave, 'length', -0.01, 0.01)
 gui.add(wave, 'amplitude', -300, 300)
+gui.add(wave, 'frequency', -0.01, 1)
 
 const mouse = {
   x: window.innerWidth / 2,
@@ -38,8 +40,7 @@ window.addEventListener('resize', () => {
 class Line {
   constructor() {
     this.color = COLORS[Math.floor(Math.random() * COLORS.length)]
-    this.frequency = 0.01
-    this.increment = this.frequency
+    this.increment = wave.frequency
   }
   draw() {
     c.beginPath()
@@ -51,7 +52,7 @@ class Line {
     c.stroke()
   }
   update() {
-    this.increment += this.frequency
+    this.increment += wave.frequency
     this.draw();
   }
 }
