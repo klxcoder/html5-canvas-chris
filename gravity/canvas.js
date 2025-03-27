@@ -80,14 +80,14 @@ class Circle {
   }
   update() {
     if (this.x + this.radius > window.innerWidth) {
-      this.dx = -this.dx * this.friction;
+      this.dx = -Math.abs(this.dx) * this.friction;
     } else if (this.x - this.radius < 0) {
-      this.dx = -this.dx * this.friction;
+      this.dx = Math.abs(this.dx) * this.friction;
     }
     if (this.y + this.radius > window.innerHeight) {
-      this.dy = -this.dy * this.friction;
+      this.dy = -Math.abs(this.dy) * this.friction;
     } else if (this.y - this.radius < 0) {
-      this.dy = -this.dy * this.friction;
+      this.dy = Math.abs(this.dy) * this.friction;
     } else {
       this.dy += 0.1;
     }
