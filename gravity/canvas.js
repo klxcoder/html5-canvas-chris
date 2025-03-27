@@ -61,6 +61,10 @@ window.addEventListener('resize', () => {
   init()
 })
 
+window.addEventListener('click', () => {
+  init()
+})
+
 class Circle {
   constructor() {
     this.radius = Math.random() * 20 + 1;
