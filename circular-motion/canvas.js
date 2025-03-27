@@ -32,12 +32,12 @@ window.addEventListener('resize', () => {
 
 class Circle {
   constructor() {
-    this.radius = Math.random() * 10 + 5;
+    this.radius = Math.random() * 5 + 3;
     this.x = 300;
     this.y = 300;
     this.color = COLORS[Math.floor(Math.random() * COLORS.length)]
-    this.distance = 100;
-    this.radians = 0;
+    this.distance = Math.random() * 100 + 50;
+    this.radians = Math.random() * 2 * Math.PI;
   }
   draw() {
     c.beginPath();
@@ -56,7 +56,7 @@ class Circle {
 let circles = []
 
 function init() {
-  circles = Array(1).fill(true).map(() => new Circle())
+  circles = Array(10).fill(true).map(() => new Circle())
 }
 
 init()
