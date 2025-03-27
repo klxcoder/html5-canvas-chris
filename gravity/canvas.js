@@ -67,9 +67,10 @@ class Circle {
     this.minRadius = this.radius;
     this.x = Math.random() * (window.innerWidth - 2 * this.radius) + this.radius;
     this.y = Math.random() * (window.innerHeight - 2 * this.radius) + this.radius;
-    this.dx = 0;
+    this.dx = Math.random() * 2;
     this.dy = Math.random() * 8;
     this.color = COLORS[Math.floor(Math.random() * COLORS.length)]
+    this.friction = 0.95;
   }
   draw() {
     c.beginPath();
@@ -79,10 +80,10 @@ class Circle {
   }
   update() {
     if (this.x + this.radius > window.innerWidth || this.x - this.radius < 0) {
-      this.dx = -this.dx;
+      this.dx = -this.dx * this.friction;
     }
     if (this.y + this.radius > window.innerHeight || this.y - this.radius < 0) {
-      this.dy = -this.dy * 0.9;
+      this.dy = -this.dy * this.friction;
     } else {
       this.dy += 0.1;
     }
