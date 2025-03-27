@@ -30,7 +30,7 @@ window.addEventListener('resize', () => {
   init()
 })
 
-class Circle {
+class Line {
   constructor() {
     this.color = COLORS[Math.floor(Math.random() * COLORS.length)]
   }
@@ -52,7 +52,7 @@ class Circle {
 let circles = []
 
 function init() {
-  circles = Array(1).fill(true).map(() => new Circle())
+  circles = Array(1).fill(true).map(() => new Line())
 }
 
 init()
