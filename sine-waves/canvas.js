@@ -3,6 +3,8 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 const c = canvas.getContext('2d')
 
+const gui = new dat.GUI()
+
 const mouse = {
   x: window.innerWidth / 2,
   y: window.innerHeight / 2,
