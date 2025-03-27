@@ -87,6 +87,7 @@ let circles = []
 
 function init() {
   circle1 = new Circle(300, 300, 100, 'black')
+  circle2 = new Circle(undefined, undefined, 30, 'red')
 }
 
 init()
@@ -95,6 +96,8 @@ function animate() {
   requestAnimationFrame(animate);
   c.clearRect(0, 0, window.innerWidth, window.innerHeight);
   circle1.update();
-
+  circle2.x = mouse.x;
+  circle2.y = mouse.y;
+  circle2.update();
 }
 animate();
