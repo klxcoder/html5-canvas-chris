@@ -10,3 +10,4 @@
   - [collision](https://klxcoder.github.io/html5-canvas-chris/collision/)
   - [collision2](https://klxcoder.github.io/html5-canvas-chris/collision2/)
   - [circular-motion](https://klxcoder.github.io/html5-canvas-chris/circular-motion/)
+  - [sine-waves](https://klxcoder.github.io/html5-canvas-chris/sine-waves/)
