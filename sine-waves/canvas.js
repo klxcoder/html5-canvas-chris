@@ -23,7 +23,7 @@ const mouse = {
 }
 
 const COLORS = [
-  "#13678A",
+  "hsl(196, 76%, 30%)",
 ]
 
 window.addEventListener('mousemove', (event) => {
