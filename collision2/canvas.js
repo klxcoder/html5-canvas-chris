@@ -40,8 +40,10 @@ class Circle {
     this.y = y;
     this.radius = radius;
     this.color = color;
-    this.dx = (Math.random() - 0.5) * 8;
-    this.dy = (Math.random() - 0.5) * 8;
+    this.velocity = {
+      x: (Math.random() - 0.5) * 8,
+      y: (Math.random() - 0.5) * 8,
+    }
   }
   draw() {
     c.beginPath();
@@ -51,13 +53,13 @@ class Circle {
   }
   update() {
     if (this.x + this.radius > window.innerWidth || this.x - this.radius < 0) {
-      this.dx = -this.dx;
+      this.velocity.x = -this.velocity.x;
     }
     if (this.y + this.radius > window.innerHeight || this.y - this.radius < 0) {
-      this.dy = -this.dy;
+      this.velocity.y = -this.velocity.y;
     }
-    this.x += this.dx;
-    this.y += this.dy;
+    this.x += this.velocity.x;
+    this.y += this.velocity.y;
 
     this.draw();
   }
