@@ -36,14 +36,19 @@ class Circle {
     this.x = 300;
     this.y = 300;
     this.color = COLORS[Math.floor(Math.random() * COLORS.length)]
+    this.distance = 100;
+    this.radians = 0;
   }
   draw() {
     c.beginPath();
-    c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
+    const x = this.x + Math.sin(this.radians) * this.distance;
+    console.log(x)
+    c.arc(x, this.y, this.radius, 0, Math.PI * 2, false)
     c.fillStyle = this.color
     c.fill();
   }
   update() {
+    this.radians += 0.05;
     this.draw();
   }
 }
