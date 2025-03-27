@@ -35,7 +35,7 @@ class Line {
     c.beginPath()
     c.moveTo(0, window.innerHeight / 2)
     for (let i = 0; i < window.innerWidth; i++) {
-      c.lineTo(i, window.innerHeight / 2 + Math.sin(i) * 100)
+      c.lineTo(i, window.innerHeight / 2 + Math.sin(i * 0.01) * 100)
     }
     c.strokeStyle = this.color
     c.stroke()
