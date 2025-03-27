@@ -4,8 +4,8 @@ canvas.height = window.innerHeight;
 const c = canvas.getContext('2d')
 
 const mouse = {
-  x: 0,
-  y: 0,
+  x: window.innerWidth / 2,
+  y: window.innerHeight / 2,
 }
 
 const MAX_RADIUS = 40
@@ -32,9 +32,9 @@ window.addEventListener('resize', () => {
 
 class Circle {
   constructor() {
-    this.radius = Math.random() * 5 + 3;
-    this.x = 300;
-    this.y = 300;
+    this.radius = Math.random() * 3 + 1;
+    this.x = 0;
+    this.y = 0;
     this.color = COLORS[Math.floor(Math.random() * COLORS.length)]
     this.distance = Math.random() * 100 + 50;
     this.radians = Math.random() * 2 * Math.PI;
