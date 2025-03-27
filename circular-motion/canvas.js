@@ -35,8 +35,6 @@ class Circle {
     this.radius = Math.random() * 10 + 5;
     this.x = 300;
     this.y = 300;
-    this.dx = (Math.random() - 0.5) * 8;
-    this.dy = (Math.random() - 0.5) * 8;
     this.color = COLORS[Math.floor(Math.random() * COLORS.length)]
   }
   draw() {
@@ -46,15 +44,6 @@ class Circle {
     c.fill();
   }
   update() {
-    if (this.x + this.radius > window.innerWidth || this.x - this.radius < 0) {
-      this.dx = -this.dx;
-    }
-    if (this.y + this.radius > window.innerHeight || this.y - this.radius < 0) {
-      this.dy = -this.dy;
-    }
-    this.x += this.dx;
-    this.y += this.dy;
-
     this.draw();
   }
 }
