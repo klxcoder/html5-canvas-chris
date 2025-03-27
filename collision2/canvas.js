@@ -58,17 +58,26 @@ class Circle {
     if (this.y + this.radius > window.innerHeight || this.y - this.radius < 0) {
       this.velocity.y = -this.velocity.y;
     }
-    this.x += this.velocity.x;
-    this.y += this.velocity.y;
+    // this.x += this.velocity.x;
+    // this.y += this.velocity.y;
 
     this.draw();
   }
 }
 
+function getRandomInt(a, b) {
+  return Math.floor(Math.random() * (b - a + 1)) + a;
+}
+
 let circles = []
 
 function init() {
-  circles = Array(4).fill(true).map(() => new Circle(300, 300, 100, 'black'))
+  circles = Array(4).fill(true).map(() => {
+    const radius = 100;
+    x = getRandomInt(radius, window.innerWidth - radius)
+    y = getRandomInt(radius, window.innerHeight - radius)
+    return new Circle(x, y, radius, 'black')
+  })
   console.log(circles)
 }
 
