@@ -38,18 +38,20 @@ window.addEventListener('resize', () => {
 class Line {
   constructor() {
     this.color = COLORS[Math.floor(Math.random() * COLORS.length)]
+    this.frequency = 0.01
+    this.increment = this.frequency
   }
   draw() {
     c.beginPath()
     c.moveTo(0, window.innerHeight / 2)
     for (let i = 0; i < window.innerWidth; i++) {
-      c.lineTo(i, wave.y + Math.sin(i * wave.length) * wave.amplitude)
+      c.lineTo(i, wave.y + Math.sin(i * wave.length + this.increment) * wave.amplitude)
     }
     c.strokeStyle = this.color
     c.stroke()
   }
   update() {
-    this.radians += 0.05;
+    this.increment += this.frequency
     this.draw();
   }
 }
