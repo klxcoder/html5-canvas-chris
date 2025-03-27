@@ -67,7 +67,7 @@ let circles = []
 
 function init() {
   circle1 = new Circle(300, 300, 100, 'black')
-  circle2 = new Circle(500, 500, 30, 'red')
+  circle2 = new Circle(500, 500, 30, 'black')
 }
 
 init()
@@ -84,8 +84,10 @@ function animate() {
   circle1.update();
   if (getDistance(circle1, circle2) < circle1.radius + circle2.radius) {
     circle1.color = 'red'
+    circle2.color = 'red'
   } else {
     circle1.color = 'black'
+    circle2.color = 'black'
   }
   circle2.update();
 }
