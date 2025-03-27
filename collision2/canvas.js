@@ -68,8 +68,8 @@ class Circle {
 let circles = []
 
 function init() {
-  circle1 = new Circle(300, 300, 100, 'black')
-  circle2 = new Circle(500, 500, 30, 'black')
+  circles = Array(4).fill(true).map(() => new Circle(300, 300, 100, 'black'))
+  console.log(circles)
 }
 
 init()
@@ -87,14 +87,19 @@ function isCollision(circle1, circle2) {
 function animate() {
   requestAnimationFrame(animate);
   c.clearRect(0, 0, window.innerWidth, window.innerHeight);
-  circle1.update();
-  if (isCollision(circle1, circle2)) {
-    circle1.color = 'red'
-    circle2.color = 'red'
-  } else {
-    circle1.color = 'black'
-    circle2.color = 'black'
+  for (let circle of circles) {
+    circle.color = 'black'
   }
-  circle2.update();
+  for (let i = 0; i < circles.length; i++) {
+    const circle1 = circles[i]
+    for (let j = i + 1; j < circles.length; j++) {
+      const circle2 = circles[j]
+      if (isCollision(circle1, circle2)) {
+        circle1.color = 'red'
+        circle2.color = 'red'
+      }
+    }
+    circle1.update();
+  }
 }
 animate();
